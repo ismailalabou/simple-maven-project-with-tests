@@ -24,3 +24,5 @@ pipeline {
       steps {
         junit '**/target/surefire-reports/TEST-*.xml'
       }
+  }
+}
