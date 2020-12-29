@@ -26,5 +26,12 @@ pipeline {
       steps {
         junit '**/target/surefire-reports/TEST-*.xml'
       }
+      always{
+        emailext body: "$currentBuild.currentResult: Job $env.JOB_NAME build $env.BUILD_NUMBER \n More info at : $env.BUILD URL",
+        recipientProviders:[developers(),requestor()],
+        subject: "Jenkins Build $currentBuild.currentResult: Job $env.JOB_NAME,",
+          to "ismail.alabou@uit.ac.ma"
+      }
+    }
   }
 }
