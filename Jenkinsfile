@@ -1,4 +1,3 @@
-@@ -1,9 +1,27 @@
 // build triggers on push
 pipeline {
   agent {
